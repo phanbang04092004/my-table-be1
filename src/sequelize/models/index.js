@@ -30,14 +30,14 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-// Provide convenient PascalCase singular aliases so code that expects
-// models.Region, models.Area, etc. works even when the model was
-// defined with a plural name like 'regions'.
-// Map common model names we have in this project.
 const aliases = {};
-if (db.regions) aliases.Region = db.regions;
-if (db.areas) aliases.Area = db.areas;
-if (db.distributors) aliases.Distributor = db.distributors;
-if (db.sales_routes) aliases.SalesRoute = db.sales_routes;
+if (db.Region) aliases.Region = db.Region;
+if (db.Area) aliases.Area = db.Area;
+if (db.Distributor) aliases.Distributor = db.Distributor;
+if (db.SalesRoute) aliases.SalesRoute = db.SalesRoute;
+if (db.Content) aliases.Content = db.Content;
+if (db.DaysKpi) aliases.DaysKpi = db.DaysKpi;
+if (db.Kpi) aliases.Kpi = db.Kpi;
+
 
 module.exports = Object.assign({}, db, aliases);

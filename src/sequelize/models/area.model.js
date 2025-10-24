@@ -16,21 +16,7 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING(100),
             allowNull: false,
         },
-        // region_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        // },
     });
-
-    // Area.associate = (models) => {
-    //     Area.belongsTo(models.Region, {
-    //         foreignKey: 'region_id',
-    //     });
-    //     Area.hasMany(models.Distributor, {
-    //         foreignKey: 'area_id',
-    //         onDelete: 'CASCADE',
-    //     });
-    // };
 
     return Area;
 };
