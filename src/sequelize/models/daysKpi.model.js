@@ -1,28 +1,36 @@
 const { DataTypes } = require('sequelize');
 
-module.exports = (sequenlize) => {
-    const DaysKpi = sequenlize.define('dayskpi', {
+module.exports = (sequelize, DataTypes) => {
+    const DaysKpi = sequelize.define('DaysKpi', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
-            type: DataTypes.STRING(100),
-            allowNull: false,
-            unique: true,
-        },
         date: {
             type: DataTypes.STRING(50),
             allowNull: false,
-            unique: true,
         },
         days_kpi: {
             type: DataTypes.INTEGER,
-            unique: true,
+            allowNull: true,
         },
-
-
+        detailskpi_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        route_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        monthly_accumulated: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+        }
+    }, {
+        tableName: 'dayskpi',
+        timestamps: false,
     });
+
     return DaysKpi;
-}
+};

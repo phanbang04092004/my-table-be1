@@ -13,9 +13,9 @@ const sequelize = new Sequelize('fillter', 'root', '04092004', {
 const connectDB = async () => {
     try {
         await sequelize.authenticate();
-        console.log('Connection to the database has been established successfully.');
+        console.log('Kết nối với database thành công.');
     } catch (error) {
-        console.error('Unable to connect to the database:', error);
+        console.error('Kế nối thất bại.', error);
     }
 };
 

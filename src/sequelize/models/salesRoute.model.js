@@ -2,7 +2,7 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    const SalesRoute = sequelize.define('sales_routes', {
+    const SalesRoute = sequelize.define('SalesRoute', {
         route_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -18,7 +18,11 @@ module.exports = (sequelize) => {
             allowNull: false,
         },
 
-    });
+    }, {
+        tableName: 'sales_routes',
+        timestamps: false,
+    }
+    );
 
 
     return SalesRoute;

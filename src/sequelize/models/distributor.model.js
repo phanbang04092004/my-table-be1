@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    const Distributor = sequelize.define('distributors', {
+    const Distributor = sequelize.define('Distributor', {
         distributor_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -16,7 +16,11 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING(100),
             allowNull: false,
         },
-    });
+    }, {
+        tableName: 'distributors',
+        timestamps: false,
+    }
+    );
 
 
     return Distributor;

@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    const Area = sequelize.define('areas', {
+    const Area = sequelize.define('Area', {
         area_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -16,7 +16,11 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING(100),
             allowNull: false,
         },
-    });
+    }, {
+        tableName: 'areas',
+        timestamps: false,
+    }
+    );
 
     return Area;
 };

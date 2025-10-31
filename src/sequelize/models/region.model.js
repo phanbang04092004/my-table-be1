@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    const Region = sequelize.define('regions', {
+    const Region = sequelize.define('Region', {
         region_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -16,6 +16,10 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING(100),
             allowNull: false,
         },
+    }, {
+        tableName: 'regions',
+        timestamps: false,
     });
+
     return Region;
 };

@@ -1,8 +1,7 @@
 const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config');
 
 module.exports = (sequelize) => {
-    const Kpi = sequelize.define('kpis', {
+    const Kpi = sequelize.define('Kpi', {
         kpi_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -12,7 +11,15 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING(100),
             allowNull: false,
             unique: true,
-        }
+        },
+        content_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+    }, {
+        tableName: 'kpis',
+        timestamps: false,
     });
+
     return Kpi;
-}
+};

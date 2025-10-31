@@ -5,6 +5,7 @@ const salesRouteRouter = require('./src/routers/salesRoute.router');
 const regionRouter = require('./src/routers/region.router');
 const areaRoutes = require('./src/routers/area.router');
 const distributorRoutes = require('./src/routers/distributor.router');
+const kpiRoutes = require('./src/routers/kpi.router');
 const app = express();
 const PORT = 3000;
 
@@ -26,6 +27,7 @@ app.use('/api/sales-routes', salesRouteRouter);
 app.use('/api/regions', regionRouter);
 app.use('/api/areas', areaRoutes);
 app.use('/api/distributors', distributorRoutes);
+app.use('/api', kpiRoutes);
 
 const startServer = async () => {
 
